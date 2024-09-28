@@ -31,7 +31,7 @@ function Calculadora() {
         if (selectedF) numeros.push(parseFloat(F));
 
         // Enviar la solicitud al backend con la operación seleccionada (ascendente o descendente)
-        fetch(`http://localhost:3500/v1/calculadora/${orden}`, {
+        fetch(`http://calculadora-back.vercel.app/v1/calculadora/${orden}`, {
             method: 'POST',
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify({ numeros })
@@ -57,7 +57,7 @@ function Calculadora() {
         if (selectedF) variables.F = parseFloat(F);
 
         // Enviar la ecuación al backend con los valores de las variables activadas
-        fetch('http://localhost:3500/v1/calculadora/ecuacion', {
+        fetch('https://calculadora-back.vercel.app/v1/calculadora/ecuacion', {
             method: 'POST',
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify({ ecuacion, variables })

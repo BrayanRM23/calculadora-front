@@ -31,7 +31,7 @@ function Calculadora() {
         if (selectedF) numeros.push(parseFloat(F));
 
         // Enviar la solicitud al backend con la operación seleccionada (ascendente o descendente)
-        fetch(`http://calculadora-back.vercel.app/v1/calculadora/${orden}`, {
+        fetch(`https://calculadora-back.vercel.app/v1/calculadora/${orden}`, {
             method: 'POST',
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify({ numeros })
